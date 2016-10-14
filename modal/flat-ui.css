@@ -6,12 +6,20 @@
     background-color: #2C3E50;
 }
 
+.dark-blue-background.btn:hover {
+    background-color: #2980B9;
+}
+
 .red-text {
     color: #E74C3C;
 }
 
 .red-background {
     background-color: #E74C3C;
+}
+
+.red-background.btn:hover {
+    background-color: #eb6f62;
 }
 
 .white-text {

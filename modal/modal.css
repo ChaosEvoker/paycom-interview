@@ -10,10 +10,6 @@ body {
     margin: 5px;
 }
 
-.btn:hover {
-    background-color: #2980B9;
-}
-
 .buttons {
     text-align: center;
 }
