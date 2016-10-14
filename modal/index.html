@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="flat-ui.css">
+        <link rel="stylesheet" type="text/css" href="modal.css">
+        <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="modal.js"></script>
+    </head>
+    <body>
+        <div class="buttons">
+            Click on any of these buttons to see a random color generated when the page was loaded:
+            <br>
+        </div>
+        <div class="modal-overlay dark-blue-background"></div>
+        <div class="modal light-blue-background">
+            <div class="close-x dark-blue-background white-text closer">X</div>
+            <div class="modal-header dark-blue-background white-text">Thanks for Clicking! Here's a Color for You!</div>
+            <div class="modal-body white-text">
+                <p>The button you clicked had a random color attached to it. That color is:</p>
+                <div class="color-display white-background">#a1b2c3</div>
+                <p>I hope you like your color! If you don't, you can close this dialog and click on another button, or you can click on "Give Me a Different Color!" below.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn dark-blue-background white-text modal-btn new-color">Give Me a Different Color!</button>
+                <button class="btn red-background white-text modal-btn closer">Close</button>
+            </div>
+        </div>
+    </body>
+</html>
