@@ -1,13 +1,19 @@
 var generateRandomHexColor = function () {
     var randColor = '#',
         brightness = 0,
+        hexNumber,
         multiplier,
         randNumber;
     // Create 3 random numbers from 0-255
     for (var i = 0; i < 3; i += 1) {
         randNumber = Math.floor(Math.random() * 255);
         // Convert the number to Hex
-        randColor += randNumber.toString(16);
+        hexNumber = randNumber.toString(16);
+        //Prepend 0s if needed
+        if (hexNumber.length < 2) {
+            hexNumber = '0' + hexNumber;
+        }
+        randColor += hexNumber;
         // Calculate brightness (based on ITU standards)
         switch (i) {
             case 0: multiplier = 0.2126; break;
@@ -25,8 +31,10 @@ var evaluateBrightness = function (brightness) {
     // If the color is bright, give it a dark background
     if (isBright) {
         $('.color-display').addClass('dark-blue-background').removeClass('white-background');
+        $('.color-brightness').html('Bright')
     } else {
         $('.color-display').removeClass('dark-blue-background').addClass('white-background');
+        $('.color-brightness').html('Dark')
     }
 }
 
