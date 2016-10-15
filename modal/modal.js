@@ -28,7 +28,7 @@ var generateRandomHexColor = function () {
 
 var evaluateBrightness = function (brightness) {
     var isBright = brightness > 150;
-    // If the color is bright, give it a dark background
+    // If the color is bright, give it a dark background, otherwise a light one
     if (isBright) {
         $('.color-display').addClass('dark-blue-background').removeClass('white-background');
         $('.color-brightness').html('Bright')
@@ -45,6 +45,8 @@ var launchDialogWithColor = function (event) {
     $('.color-display').html(hexColor).css('color', hexColor);
     evaluateBrightness(brightness);
     $('.modal-overlay').fadeIn();
+    // Once the modal is done animating in, show the buttons. Otherwise it looks
+    // a little weird while it's animating.
     $('.modal').slideDown().promise().done(function () {
         $('.modal-footer').show();
     });
@@ -66,6 +68,7 @@ var generateNewColor = function () {
 
 $(function () {
     var buttonsWrapper = $('.buttons')
+    // Generate some buttons with random colors.
     for (var x = 0; x < 10; x += 1) {
         var button = $('<button class="btn dark-blue-background white-text dialog-btn">Click Me!</button>'),
             colorAndBrightness = generateRandomHexColor(),
